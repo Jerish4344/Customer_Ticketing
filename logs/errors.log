@@ -1,0 +1,895 @@
+[2026-02-20 12:12:40,380] ERROR django.request log.log_message:249 — Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/dashboard/views.py", line 144, in dashboard_index_view
+    return render(request, 'dashboard/index.html', context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+[2026-02-20 12:12:40,383] ERROR django.server log.log_message:249 — "GET /dashboard/ HTTP/1.1" 500 209932
+[2026-02-20 12:12:52,987] ERROR django.request log.log_message:249 — Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/dashboard/views.py", line 144, in dashboard_index_view
+    return render(request, 'dashboard/index.html', context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+[2026-02-20 12:12:52,990] ERROR django.server log.log_message:249 — "GET /dashboard/ HTTP/1.1" 500 209932
+[2026-02-20 12:39:25,495] ERROR django.request log.log_message:249 — Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/accounts/views.py", line 33, in login_view
+    return render(request, 'accounts/login.html')
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/library.py", line 325, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/templatetags/socialaccount.py", line 21, in provider_login_url
+    provider = adapter.get_provider(request, provider)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 212, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 299, in get_app
+    raise MultipleObjectsReturned
+django.core.exceptions.MultipleObjectsReturned
+[2026-02-20 12:39:25,500] ERROR django.server log.log_message:249 — "GET /accounts/login/ HTTP/1.1" 500 174812
+[2026-02-20 12:39:28,017] ERROR django.request log.log_message:249 — Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/accounts/views.py", line 33, in login_view
+    return render(request, 'accounts/login.html')
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/library.py", line 325, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/templatetags/socialaccount.py", line 21, in provider_login_url
+    provider = adapter.get_provider(request, provider)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 212, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 299, in get_app
+    raise MultipleObjectsReturned
+django.core.exceptions.MultipleObjectsReturned
+[2026-02-20 12:39:28,020] ERROR django.server log.log_message:249 — "GET /accounts/login/ HTTP/1.1" 500 174812
+[2026-02-20 12:41:57,863] ERROR django.request log.log_message:249 — Internal Server Error: /accounts/google/login/callback/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 102, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 151, in dispatch
+    return complete_social_login(request, login)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/helpers.py", line 70, in complete_social_login
+    return flows.login.complete_login(request, sociallogin)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/internal/flows/login.py", line 53, in complete_login
+    return _authenticate(request, sociallogin)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/internal/flows/login.py", line 80, in _authenticate
+    ret = process_signup(request, sociallogin)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/socialaccount/internal/flows/signup.py", line 122, in process_signup
+    get_account_adapter(request).clean_username(username)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/account/adapter.py", line 365, in clean_username
+    for validator in app_settings.USERNAME_VALIDATORS:
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/account/app_settings.py", line 589, in __getattr__
+    return getattr(_app_settings, name)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/allauth/account/app_settings.py", line 497, in USERNAME_VALIDATORS
+    ._meta.get_field(self.USER_MODEL_USERNAME_FIELD)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: User has no field named 'username'
+[2026-02-20 12:41:57,866] ERROR django.server log.log_message:249 — "GET /accounts/google/login/callback/?state=ifsBC8mnzJ3VkELN&code=4%2F0AfrIepCeRESPccKHzh9Bk4KHBtTT1Pyr0mQsno2EM47NxCewDd-pclZzCmMxVBtwu_5KDg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 500 123952
+[2026-02-20 12:47:38,302] ERROR jeyaramadesk ticket_service.create_ticket:57 — Automation error for ticket JRD-8G9CX3: type object 'AutomationService' has no attribute 'run_ticket_automations'
+[2026-02-20 12:47:46,152] ERROR django.request log.log_message:249 — Internal Server Error: /chat/start/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 91, in start_chat
+    content=f'{request.user.get_full_name() or request.user.email} started a chat.',
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 12:47:46,155] ERROR django.server log.log_message:249 — "POST /chat/start/ HTTP/1.1" 500 89682
+[2026-02-20 12:50:12,782] ERROR jeyaramadesk signals.comment_post_save:34 — Notification error on comment: 'User' object has no attribute 'get_full_name'
+[2026-02-20 12:53:48,982] ERROR django.request log.log_message:249 — Internal Server Error: /chat/start/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 91, in start_chat
+    content=f'{request.user.get_full_name() or request.user.email} started a chat.',
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 12:53:48,984] ERROR django.server log.log_message:249 — "POST /chat/start/ HTTP/1.1" 500 89682
+[2026-02-20 13:00:17,083] ERROR django.request log.log_message:249 — Internal Server Error: /tickets/1/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: jrd_users.address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 56, in _view_wrapper
+    test_pass = test_func(request.user)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 79, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ~~~~~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py", line 318, in get_user
+    user = backend.get_user(user_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/backends.py", line 232, in get_user
+    user = UserModel._default_manager.get(pk=user_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: jrd_users.address
+[2026-02-20 13:00:17,088] ERROR django.server log.log_message:249 — "GET /tickets/1/ HTTP/1.1" 500 182424
+[2026-02-20 13:00:19,818] ERROR django.request log.log_message:249 — Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: jrd_users.address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 56, in _view_wrapper
+    test_pass = test_func(request.user)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 79, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ~~~~~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py", line 318, in get_user
+    user = backend.get_user(user_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/backends.py", line 232, in get_user
+    user = UserModel._default_manager.get(pk=user_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: jrd_users.address
+[2026-02-20 13:00:19,821] ERROR django.server log.log_message:249 — "GET / HTTP/1.1" 500 182095
+[2026-02-20 13:00:22,014] ERROR django.request log.log_message:249 — Internal Server Error: /knowledge-base/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: jrd_users.address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/knowledge_base/views.py", line 28, in kb_home_view
+    return render(request, 'knowledge_base/kb_home.html', {
+        'categories': categories,
+        'featured_articles': featured,
+        'popular_articles': popular,
+    })
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 172, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/context.py", line 263, in bind_template
+    context = processor(self.request)
+  File "/Users/jerish/Desktop/Customer_Care/notifications/context_processors.py", line 11, in unread_notifications_count
+    if request.user.is_authenticated:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ~~~~~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py", line 318, in get_user
+    user = backend.get_user(user_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/backends.py", line 232, in get_user
+    user = UserModel._default_manager.get(pk=user_id)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: jrd_users.address
+[2026-02-20 13:00:22,017] ERROR django.server log.log_message:249 — "GET /knowledge-base/ HTTP/1.1" 500 207559
+[2026-02-20 13:02:50,518] ERROR django.request log.log_message:249 — Internal Server Error: /chat/start/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 91, in start_chat
+    content=f'{request.user.get_full_name() or request.user.email} started a chat.',
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 13:02:50,521] ERROR django.server log.log_message:249 — "POST /chat/start/ HTTP/1.1" 500 89670
+[2026-02-20 13:02:56,158] ERROR django.request log.log_message:249 — Internal Server Error: /chat/start/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 91, in start_chat
+    content=f'{request.user.get_full_name() or request.user.email} started a chat.',
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 13:02:56,160] ERROR django.server log.log_message:249 — "POST /chat/start/ HTTP/1.1" 500 89682
+[2026-02-20 13:03:27,799] ERROR django.request log.log_message:249 — Internal Server Error: /chat/start/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 91, in start_chat
+    content=f'{request.user.get_full_name() or request.user.email} started a chat.',
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 13:03:27,801] ERROR django.server log.log_message:249 — "POST /chat/start/ HTTP/1.1" 500 89682
+[2026-02-20 13:17:06,927] ERROR django.request log.log_message:249 — Internal Server Error: /chat/f5f83e05-03d2-451d-8fef-87a977e786d3/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 254, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 72, in chat_room
+    return render(request, 'livechat/chat_room.html', {
+        'room': room,
+        'messages': messages,
+    })
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1156, in render
+    return render_value_in_context(output, context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1133, in render_value_in_context
+    value = str(value)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/models.py", line 103, in __str__
+    sender_name = self.sender.get_full_name() if self.sender else 'System'
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 13:17:06,934] ERROR django.channels.server runserver.log_action:194 — [35;1mHTTP GET /chat/f5f83e05-03d2-451d-8fef-87a977e786d3/ 500 [0.10, 127.0.0.1:63556][0m
+[2026-02-20 13:18:14,372] ERROR django.request log.log_message:249 — Internal Server Error: /chat/f5f83e05-03d2-451d-8fef-87a977e786d3/
+Traceback (most recent call last):
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 254, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/asgiref/sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/views.py", line 72, in chat_room
+    return render(request, 'livechat/chat_room.html', {
+        'room': room,
+        'messages': messages,
+    })
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1156, in render
+    return render_value_in_context(output, context)
+  File "/Users/jerish/Desktop/Customer_Care/venv/lib/python3.13/site-packages/django/template/base.py", line 1133, in render_value_in_context
+    value = str(value)
+  File "/Users/jerish/Desktop/Customer_Care/livechat/models.py", line 103, in __str__
+    sender_name = self.sender.get_full_name() if self.sender else 'System'
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'get_full_name'. Did you mean: 'full_name'?
+[2026-02-20 13:18:14,376] ERROR django.channels.server runserver.log_action:194 — [35;1mHTTP GET /chat/f5f83e05-03d2-451d-8fef-87a977e786d3/ 500 [0.05, 127.0.0.1:63584][0m
+[2026-02-20 13:49:06,089] ERROR jeyaramadesk ticket_service.create_ticket:57 — Automation error for ticket JRD-AUVUA8: type object 'AutomationService' has no attribute 'run_ticket_automations'
