@@ -345,3 +345,12 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
     SECURE_SSL_REDIRECT = True
+
+
+# Cookie paths - CRITICAL for subpath deployment
+SESSION_COOKIE_PATH = '/desk/'
+CSRF_COOKIE_PATH = '/desk/'
+
+# Unique cookie names - CRITICAL when multiple apps on same domain
+SESSION_COOKIE_NAME = 'desk_sessionid'
+CSRF_COOKIE_NAME = 'desk_csrftoken'

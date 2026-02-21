@@ -840,3 +840,12 @@ allauth.socialaccount.models.SocialApp.DoesNotExist
 [2026-02-21 09:30:35,370] DEBUG jeyaramadesk consumers.connect:26 — WS connected: jerish220@gmail.com
 [2026-02-21 09:30:37,908] INFO jeyaramadesk audit.__call__:27 — AUDIT | POST /desk/notifications/mark-all-read/ | User: jerish220@gmail.com | IP: 192.168.0.1 | Status: 200
 [2026-02-21 09:30:38,028] DEBUG jeyaramadesk consumers.disconnect:34 — WS disconnected: jerish220@gmail.com
+[2026-02-21 10:51:37,082] WARNING django.security.csrf log.log_response:246 — Forbidden (CSRF token from POST incorrect.): /desk/accounts/login/
+[2026-02-21 11:00:36,284] INFO jeyaramadesk account_service.login_user:60 — User jerish@jeyarama.com logged in from 192.168.0.1
+[2026-02-21 11:00:36,285] INFO jeyaramadesk audit.__call__:27 — AUDIT | POST /desk/accounts/login/ | User: jerish@jeyarama.com | IP: 192.168.0.1 | Status: 302
+[2026-02-21 11:00:40,234] DEBUG jeyaramadesk consumers.connect:26 — WS connected: jerish@jeyarama.com
+[2026-02-21 11:00:43,216] DEBUG jeyaramadesk consumers.disconnect:34 — WS disconnected: jerish@jeyarama.com
+[2026-02-21 11:00:48,837] DEBUG jeyaramadesk consumers.connect:26 — WS connected: jerish@jeyarama.com
+[2026-02-21 11:00:50,032] INFO jeyaramadesk audit.__call__:27 — AUDIT | POST /desk/notifications/mark-all-read/ | User: jerish@jeyarama.com | IP: 192.168.0.1 | Status: 200
+[2026-02-21 11:00:50,059] DEBUG jeyaramadesk consumers.disconnect:34 — WS disconnected: jerish@jeyarama.com
+[2026-02-21 11:00:59,236] DEBUG jeyaramadesk consumers.connect:26 — WS connected: jerish@jeyarama.com
