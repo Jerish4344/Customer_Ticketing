@@ -12,13 +12,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ── Security ──────────────────────────────────────────────────
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
-    'django-insecure-jrd-dev-key-change-in-production-!@#$%^&*()'
+    'oq138oq8$an2pw&@_llh=)xz6jn53fqyu8z&j)rawa13gsj&i@'
 )
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,192.168.2.76,jeyarama.com,www.jeyarama.com').split(',')
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # ── Application Registry ─────────────────────────────────────
 INSTALLED_APPS = [
+    'jazzmin',
     # Daphne ASGI server — must be before staticfiles
     'daphne',
 
@@ -127,12 +130,25 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+URL_PREFIX = '/desk'
+
+# --- Force Script to redirect to /desk -----------------------
+# FORCE_SCRIPT_NAME = '/desk'
+
+# If using Django Admin, consider setting:
+# ADMIN_URL = "/desk/admin/"
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://jeyarama.com",
+    "https://www.jeyarama.com",
+]
+
 # ── Static & Media Files ─────────────────────────────────────
-STATIC_URL = '/static/'
+STATIC_URL = '/desk/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/desk/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # ── Default Primary Key ──────────────────────────────────────
@@ -286,9 +302,10 @@ LOGGING = {
 }
 
 # ── Login / Redirect URLs ────────────────────────────────────
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/dashboard/'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGIN_URL = '/desk/accounts/login/'
+LOGIN_REDIRECT_URL = '/desk/'
+LOGOUT_REDIRECT_URL = '/desk/accounts/login/'
+SOCIALACCOUNT_LOGIN_REDIRECT_URL = '/desk/'
 
 # ── django-allauth / Google OAuth ─────────────────────────────
 SITE_ID = 1
@@ -302,7 +319,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_LOGIN_METHODS = {'email'}          # login by email only
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']  # email required, no username
 ACCOUNT_EMAIL_VERIFICATION = 'none'        # skip email verification for fast onboarding
-ACCOUNT_SIGNUP_REDIRECT_URL = '/dashboard/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/desk/'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None   # our User model has no username field
 ACCOUNT_ADAPTER = 'accounts.adapters.AccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'accounts.adapters.SocialAccountAdapter'

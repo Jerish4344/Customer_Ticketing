@@ -7,13 +7,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 
-urlpatterns = [
+_urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
 
     # App routes (template views)
     path('', include('dashboard.urls')),
-    path('dashboard/', include('dashboard.urls')),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')),      # Google OAuth routes
     path('tickets/', include('tickets.urls')),
@@ -33,6 +32,12 @@ urlpatterns = [
     path('api/reports/', include('reports.api.urls')),
     path('api/knowledge-base/', include('knowledge_base.api.urls')),
 ]
+
+# In production, wrap under /desk/
+if getattr(settings, 'URL_PREFIX', None):
+    urlpatterns = [path('desk/', include(_urlpatterns))]
+else:
+    urlpatterns = _urlpatterns
 
 # Serve media files in development
 if settings.DEBUG:

@@ -6,7 +6,7 @@ Ensures Google-authenticated users are created with the 'customer' role.
 
 from allauth.account.adapter import DefaultAccountAdapter
 from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
-
+from django.urls import reverse
 
 class AccountAdapter(DefaultAccountAdapter):
     """Override default allauth account behaviour."""
@@ -25,8 +25,6 @@ class AccountAdapter(DefaultAccountAdapter):
         has not yet filled in their details.
         """
         user = request.user
-        if user.is_authenticated and not user.is_profile_completed and user.role == 'customer':
-            return '/accounts/complete-profile/'
         return super().get_login_redirect_url(request)
 
 
@@ -65,7 +63,7 @@ class SocialAccountAdapter(DefaultSocialAccountAdapter):
         user.role = 'customer'
         user.first_name = data.get('given_name', user.first_name or '')
         user.last_name = data.get('family_name', user.last_name or '')
-        user.is_profile_completed = False  # Force profile completion
+        user.is_profile_completed = True  # Force profile completion
         user.save(update_fields=['role', 'first_name', 'last_name', 'is_profile_completed'])
         return user
 

@@ -11,7 +11,7 @@ from django.views.decorators.http import require_http_methods
 from django.core.paginator import Paginator
 from accounts.services.account_service import AuthService, UserService
 from accounts.models import User, LoginAuditLog
-
+from django.conf import settings
 
 # ── Authentication Views ──────────────────────────────────────
 
@@ -27,7 +27,7 @@ def login_view(request):
 
         if user:
             messages.success(request, f'Welcome back, {user.first_name}!')
-            next_url = request.GET.get('next', '/dashboard/')
+            next_url = request.GET.get('next', settings.LOGIN_REDIRECT_URL)
             return redirect(next_url)
         else:
             messages.error(request, error)
