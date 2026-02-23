@@ -672,3 +672,6 @@ Traceback (most recent call last):
     raise SocialApp.DoesNotExist()
 allauth.socialaccount.models.SocialApp.DoesNotExist
 [2026-02-21 09:12:15,173] ERROR jeyaramadesk ticket_service.create_ticket:57 — Automation error for ticket JRD-RLKMLW: type object 'AutomationService' has no attribute 'run_ticket_automations'
+[2026-02-21 12:49:05,866] ERROR jeyaramadesk ticket_service.create_ticket:57 — Automation error for ticket JRD-G1UR16: type object 'AutomationService' has no attribute 'run_ticket_automations'
+[2026-02-21 13:17:30,222] ERROR jeyaramadesk ticket_service.create_ticket:57 — Automation error for ticket JRD-CWH1WZ: type object 'AutomationService' has no attribute 'run_ticket_automations'
+[2026-02-21 13:23:11,343] ERROR jeyaramadesk ticket_service.create_ticket:57 — Automation error for ticket JRD-PGCHPA: type object 'AutomationService' has no attribute 'run_ticket_automations'

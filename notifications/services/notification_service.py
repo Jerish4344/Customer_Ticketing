@@ -74,7 +74,7 @@ class NotificationService:
 
     @staticmethod
     def notify_new_comment(comment):
-        """Notify the ticket owner and assigned agent about a new comment."""
+        """Notify the ticket owner, assigned agent, and admins about a new comment."""
         ticket = comment.ticket
         recipients = set()
 
@@ -85,6 +85,15 @@ class NotificationService:
         # Notify assigned agent (unless they wrote the comment)
         if ticket.assigned_agent and ticket.assigned_agent != comment.author:
             recipients.add(ticket.assigned_agent)
+
+        # If the commenter is a customer, also notify managers / superadmins
+        if comment.author and hasattr(comment.author, 'is_customer') and comment.author.is_customer:
+            from accounts.models import User
+            staff = User.objects.filter(
+                role__in=['superadmin', 'manager'],
+                is_active=True,
+            ).exclude(pk=comment.author.pk)
+            recipients.update(staff)
 
         for user in recipients:
             NotificationService.create_notification(
