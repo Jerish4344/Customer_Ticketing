@@ -2,7 +2,7 @@
 
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
@@ -33,10 +33,12 @@ def notification_list(request):
 @login_required
 @require_POST
 def mark_read(request, pk):
-    """Mark a single notification as read (AJAX)."""
+    """Mark a single notification as read (AJAX or form submit)."""
     notification = get_object_or_404(Notification, pk=pk, user=request.user)
     notification.mark_read()
-    return JsonResponse({'status': 'ok'})
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'status': 'ok'})
+    return redirect('notifications:list')
 
 
 @login_required
@@ -47,7 +49,19 @@ def mark_all_read(request):
         user=request.user,
         is_read=False,
     ).update(is_read=True, read_at=timezone.now())
-    return JsonResponse({'status': 'ok'})
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'status': 'ok'})
+    return redirect('notifications:list')
+
+
+@login_required
+def notification_open(request, pk):
+    """Open a notification: mark it as read and redirect to the relevant page."""
+    notification = get_object_or_404(Notification, pk=pk, user=request.user)
+    notification.mark_read()
+    if notification.ticket:
+        return redirect('tickets:detail', ticket_id=notification.ticket.ticket_id)
+    return redirect('notifications:list')
 
 
 @login_required

@@ -42,6 +42,12 @@ class SLAService:
             ticket.sla_response_met = False
             ticket.save(update_fields=['sla_response_met'])
             breaches_found += 1
+            # Send notification
+            try:
+                from notifications.services.notification_service import NotificationService
+                NotificationService.notify_sla_breach(ticket, breach_type='response')
+            except Exception as e:
+                logger.error(f'SLA breach notification error: {e}')
 
         # Resolution time breaches
         resolution_breached = Ticket.objects.filter(
@@ -61,6 +67,12 @@ class SLAService:
             ticket.sla_resolution_met = False
             ticket.save(update_fields=['sla_resolution_met'])
             breaches_found += 1
+            # Send notification
+            try:
+                from notifications.services.notification_service import NotificationService
+                NotificationService.notify_sla_breach(ticket, breach_type='resolution')
+            except Exception as e:
+                logger.error(f'SLA breach notification error: {e}')
 
         if breaches_found:
             logger.warning(f'SLA Check: {breaches_found} new breaches detected.')
@@ -91,11 +103,14 @@ class SLAService:
         resolution_total = stats['resolution_met'] + stats['resolution_breached']
 
         stats['total'] = total_with_sla
+        stats['total_breaches'] = SLABreach.objects.count()
         stats['response_rate'] = round(
             (stats['response_met'] / response_total * 100) if response_total else 0, 1
         )
         stats['resolution_rate'] = round(
             (stats['resolution_met'] / resolution_total * 100) if resolution_total else 0, 1
         )
+        stats['response_met_rate'] = stats['response_rate']
+        stats['resolution_met_rate'] = stats['resolution_rate']
 
         return stats

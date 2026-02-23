@@ -13,7 +13,7 @@
             </p>
         </div>
         {% if unread_count %}
-        <form method="post" action="{% url 'notifications:mark_all_read' %}">
+        <form method="post" action="{% url 'notifications:mark_all_read' %}" class="js-mark-all-read-form">
             {% csrf_token %}
             <button type="submit"
                     class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition">
@@ -48,8 +48,9 @@
     <!-- Notification List -->
     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-700 overflow-hidden">
         {% for notification in notifications %}
-        <div class="flex items-start gap-4 p-4 {% if not notification.is_read %}bg-blue-50/50 dark:bg-blue-900/10{% endif %} hover:bg-gray-50 dark:hover:bg-gray-700/30 transition"
-             id="notif-{{ notification.id }}">
+        <a href="{% url 'notifications:open' notification.pk %}"
+           class="flex items-start gap-4 p-4 {% if not notification.is_read %}bg-blue-50/50 dark:bg-blue-900/10{% endif %} hover:bg-gray-50 dark:hover:bg-gray-700/30 transition cursor-pointer no-underline"
+           id="notif-{{ notification.id }}">
             <!-- Icon -->
             <div class="flex-shrink-0 mt-0.5">
                 {% if notification.notification_type == 'ticket_created' %}
@@ -104,14 +105,13 @@
                         <div class="flex items-center gap-3 mt-1">
                             <span class="text-xs text-gray-400 dark:text-gray-500">{{ notification.created_at|timesince }} ago</span>
                             {% if notification.ticket %}
-                            <a href="{% url 'tickets:detail' notification.ticket.ticket_id %}"
-                               class="text-xs text-blue-600 dark:text-blue-400 hover:underline">{{ notification.ticket.ticket_id }}</a>
+                            <span class="text-xs text-blue-600 dark:text-blue-400">{{ notification.ticket.ticket_id }}</span>
                             {% endif %}
                         </div>
                     </div>
 
                     {% if not notification.is_read %}
-                    <form method="post" action="{% url 'notifications:mark_read' notification.pk %}" class="flex-shrink-0">
+                    <form method="post" action="{% url 'notifications:mark_read' notification.pk %}" class="flex-shrink-0 js-mark-read-form">
                         {% csrf_token %}
                         <button type="submit" title="Mark as read"
                                 class="p-1 text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
@@ -128,7 +128,7 @@
             {% if not notification.is_read %}
             <span class="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
             {% endif %}
-        </div>
+        </a>
         {% empty %}
         <div class="p-12 text-center">
             <svg class="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,6 +139,72 @@
         {% endfor %}
     </div>
 </div>
+
+<!-- AJAX mark-as-read handlers -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Mark single notification as read via AJAX
+    document.querySelectorAll('.js-mark-read-form').forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const url = form.action;
+            const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
+            const notificationRow = form.closest('.flex.items-start, [class*="divide-y"] > div');
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+            }).then(function (response) {
+                if (response.ok) {
+                    // Hide the mark-read button
+                    form.remove();
+                    // Remove the unread dot if present
+                    if (notificationRow) {
+                        const dot = notificationRow.querySelector('.bg-blue-500.rounded-full');
+                        if (dot) dot.remove();
+                        // Remove the blue left border (unread indicator)
+                        notificationRow.classList.remove('border-l-4', 'border-l-blue-500');
+                    }
+                    // Update the unread count in the header
+                    const countEl = document.querySelector('.text-sm.text-gray-500.dark\\:text-gray-400.mt-1');
+                    if (countEl) {
+                        const match = countEl.textContent.match(/(\d+)/);
+                        if (match) {
+                            const newCount = parseInt(match[1]) - 1;
+                            countEl.textContent = newCount > 0 ? newCount + ' unread' : 'All caught up';
+                        }
+                    }
+                }
+            });
+        });
+    });
+
+    // Mark all notifications as read via AJAX
+    const markAllForm = document.querySelector('.js-mark-all-read-form');
+    if (markAllForm) {
+        markAllForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const url = markAllForm.action;
+            const csrfToken = markAllForm.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+            }).then(function (response) {
+                if (response.ok) {
+                    location.reload();
+                }
+            });
+        });
+    }
+});
+</script>
 
 <!-- WebSocket real-time listener -->
 <script>
